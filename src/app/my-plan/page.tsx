@@ -36,26 +36,23 @@ export default function MyPlanPage() {
   });
 
   return (
-    <div className="py-8 sm:py-12 bg-[#0d0d0d] min-h-[calc(100vh-80px)]">
+    <div className="py-8 sm:py-12 bg-[#0f1115] min-h-[calc(100vh-80px)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col mb-8 sm:mb-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#ccff00]"></span>
-            <span className="text-xs uppercase font-extrabold tracking-widest text-[#ccff00]">
-              DAILY TRACKER
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white font-[family-name:var(--font-oswald)] tracking-tight">
+          <span className="text-[11px] font-bold text-[#c2f800] tracking-[1.2px] uppercase mb-2">
+            DAILY TRACKER
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-white font-[family-name:var(--font-oswald)] tracking-tight">
             MY PLAN
           </h1>
-          <p className="text-gray-400 text-sm sm:text-base mt-2">
+          <p className="text-gray-400 text-sm sm:text-[15px] mt-2">
             Cap of five lifts for today. Finish them, then load more.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-10">
-          <div className="bg-[#141414] border border-[#222222] rounded-xl p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-[#ccff00]">
+          <div className="bg-[#13161d] border border-[#232732] rounded-2xl p-6 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-[#181b24] border border-[#232732] flex items-center justify-center text-[#c2f800]">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -71,18 +68,18 @@ export default function MyPlanPage() {
               </svg>
             </div>
             <div>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
                 EXERCISES
               </span>
-              <span className="text-2xl sm:text-3xl font-black text-white font-[family-name:var(--font-oswald)]">
+              <span className="text-2xl sm:text-3xl font-bold text-white font-[family-name:var(--font-oswald)]">
                 {isHydrated ? metrics.exercises : 0}
                 <span className="text-xs font-semibold text-gray-500 ml-1">/ 5</span>
               </span>
             </div>
           </div>
 
-          <div className="bg-[#141414] border border-[#222222] rounded-xl p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-[#ccff00]">
+          <div className="bg-[#13161d] border border-[#232732] rounded-2xl p-6 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-[#181b24] border border-[#232732] flex items-center justify-center text-[#c2f800]">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -98,18 +95,18 @@ export default function MyPlanPage() {
               </svg>
             </div>
             <div>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
                 MINUTES
               </span>
-              <span className="text-2xl sm:text-3xl font-black text-white font-[family-name:var(--font-oswald)]">
+              <span className="text-2xl sm:text-3xl font-bold text-white font-[family-name:var(--font-oswald)]">
                 {isHydrated ? metrics.minutes : 0}
                 <span className="text-xs font-semibold text-gray-500 ml-1">min</span>
               </span>
             </div>
           </div>
 
-          <div className="bg-[#141414] border border-[#222222] rounded-xl p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-[#ccff00]">
+          <div className="bg-[#13161d] border border-[#232732] rounded-2xl p-6 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-[#181b24] border border-[#232732] flex items-center justify-center text-[#c2f800]">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -125,10 +122,10 @@ export default function MyPlanPage() {
               </svg>
             </div>
             <div>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
                 CALORIES
               </span>
-              <span className="text-2xl sm:text-3xl font-black text-white font-[family-name:var(--font-oswald)]">
+              <span className="text-2xl sm:text-3xl font-bold text-white font-[family-name:var(--font-oswald)]">
                 {isHydrated ? metrics.calories : 0}
                 <span className="text-xs font-semibold text-gray-500 ml-1">kcal</span>
               </span>
@@ -136,14 +133,14 @@ export default function MyPlanPage() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[#222222]">
-          <div className="flex items-center gap-2 p-1 rounded-xl bg-[#141414] border border-[#242424] self-start">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[#232732]">
+          <div className="flex items-center gap-2 p-1 rounded-xl bg-[#13161d] border border-[#232732] self-start">
             <button
               type="button"
               onClick={() => setActiveTab("plan")}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeTab === "plan"
-                  ? "bg-[#ccff00] text-black shadow-sm"
+                  ? "bg-[#c2f800] text-black shadow-sm"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -155,7 +152,7 @@ export default function MyPlanPage() {
               onClick={() => setActiveTab("saved")}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeTab === "saved"
-                  ? "bg-[#ccff00] text-black shadow-sm"
+                  ? "bg-[#c2f800] text-black shadow-sm"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -171,7 +168,7 @@ export default function MyPlanPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="appearance-none bg-[#141414] border border-[#2a2a2a] hover:border-[#ccff00]/50 text-white text-xs font-semibold rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-[#ccff00] transition-colors cursor-pointer"
+                className="appearance-none bg-[#13161d] border border-[#232732] hover:border-[#c2f800]/50 text-white text-xs font-semibold rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-[#c2f800] transition-colors cursor-pointer"
               >
                 <option value="duration">Duration</option>
                 <option value="calories">Calories</option>
@@ -198,12 +195,12 @@ export default function MyPlanPage() {
 
         {!isHydrated ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="w-8 h-8 border-2 border-[#ccff00] border-t-transparent rounded-full animate-spin mb-4" />
+            <div className="w-8 h-8 border-2 border-[#c2f800] border-t-transparent rounded-full animate-spin mb-4" />
             <p className="text-gray-400 text-sm">Loading workouts...</p>
           </div>
         ) : sortedList.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 px-4 rounded-2xl bg-[#141414] border border-[#242424] text-center max-w-2xl mx-auto">
-            <div className="w-16 h-16 rounded-full bg-[#1c1c1c] border border-[#2c2c2c] flex items-center justify-center text-gray-500 mb-5">
+          <div className="flex flex-col items-center justify-center py-16 px-4 rounded-xl bg-[#111317] border border-[#232732] text-center max-w-2xl mx-auto">
+            <div className="w-16 h-16 rounded-full bg-[#181b24] border border-[#232732] flex items-center justify-center text-gray-500 mb-5">
               <svg
                 className="w-8 h-8"
                 fill="none"
@@ -218,7 +215,7 @@ export default function MyPlanPage() {
                 />
               </svg>
             </div>
-            <h2 className="text-2xl font-black text-white uppercase font-[family-name:var(--font-oswald)] mb-2 tracking-tight">
+            <h2 className="text-2xl font-bold text-white uppercase font-[family-name:var(--font-oswald)] mb-2 tracking-tight">
               NOTHING HERE YET
             </h2>
             <p className="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
@@ -228,7 +225,7 @@ export default function MyPlanPage() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-sm uppercase tracking-wide transition-all duration-200 active:scale-95 shadow-md shadow-[#ccff00]/15"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] bg-[#c2f800] hover:bg-[#b0e000] text-black font-bold text-xs uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm"
             >
               <span>Go to workouts</span>
               <svg
@@ -257,14 +254,14 @@ export default function MyPlanPage() {
               return (
                 <div
                   key={item.id}
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border transition-all duration-200 ${
+                  className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl border transition-all duration-200 ${
                     isCompleted
-                      ? "bg-[#101510] border-[#1d3d1d]/80 opacity-90"
-                      : "bg-[#141414] hover:bg-[#171717] border-[#222222] hover:border-[#ccff00]/40"
+                      ? "bg-[#11141a] border-[#1e331e] opacity-90"
+                      : "bg-[#14171e] hover:bg-[#181b24] border-[#232732] hover:border-[#c2f800]/40"
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden bg-[#1f1f1f] flex-shrink-0 border border-[#2a2a2a]">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-[#181b24] flex-shrink-0 border border-[#232732]">
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -273,8 +270,8 @@ export default function MyPlanPage() {
                         className="object-cover object-center"
                       />
                       {isCompleted && (
-                        <div className="absolute inset-0 bg-[#0d0d0d]/60 flex items-center justify-center">
-                          <span className="w-8 h-8 rounded-full bg-[#ccff00] text-black flex items-center justify-center font-black text-sm">
+                        <div className="absolute inset-0 bg-[#0c0d10]/60 flex items-center justify-center">
+                          <span className="w-8 h-8 rounded-full bg-[#c2f800] text-black flex items-center justify-center font-black text-sm">
                             ✓
                           </span>
                         </div>
@@ -293,7 +290,7 @@ export default function MyPlanPage() {
                           {item.name}
                         </h3>
                         {isCompleted && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-[#ccff00]/15 text-[#ccff00] border border-[#ccff00]/30">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#c2f800]/15 text-[#c2f800] border border-[#c2f800]/30">
                             COMPLETED
                           </span>
                         )}
@@ -304,7 +301,7 @@ export default function MyPlanPage() {
                       </span>
 
                       <div className="flex items-center gap-3 sm:gap-4 text-xs text-gray-300">
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1.5">
                           <svg
                             className="w-3.5 h-3.5 text-gray-400"
                             fill="none"
@@ -320,7 +317,7 @@ export default function MyPlanPage() {
                           </svg>
                           {item.duration} min
                         </span>
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1.5">
                           <svg
                             className="w-3.5 h-3.5 text-amber-400"
                             fill="currentColor"
@@ -335,17 +332,17 @@ export default function MyPlanPage() {
                           {item.caloriesBurned} kcal
                         </span>
                         <span className="flex items-center gap-1 font-semibold text-white">
-                          <span className="text-[#ccff00]">★</span>
-                          {item.rating}
+                          <span className="text-[#c2f800]">★</span>
+                          <span>{item.rating}</span>
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 self-end sm:self-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-[#222222] w-full sm:w-auto justify-end">
+                  <div className="flex items-center gap-2 self-end sm:self-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-[#232732] w-full sm:w-auto justify-end">
                     <Link
                       href={`/workout/${item.id}`}
-                      className="px-3.5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#1d1d1d] hover:bg-[#252525] text-gray-200 hover:text-white border border-[#2e2e2e] transition-colors"
+                      className="px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#181b24] hover:bg-[#202430] text-gray-200 hover:text-white border border-[#282e3c] transition-colors"
                     >
                       View Details
                     </Link>
@@ -354,7 +351,7 @@ export default function MyPlanPage() {
                       <button
                         type="button"
                         onClick={() => markAsDone(item.id)}
-                        className="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg text-xs font-extrabold uppercase tracking-wider bg-[#ccff00] hover:bg-[#b8e600] text-black transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#c2f800] hover:bg-[#b0e000] text-black transition-colors cursor-pointer"
                         title="Mark workout as done"
                       >
                         <svg
@@ -381,7 +378,7 @@ export default function MyPlanPage() {
                           ? removeFromPlan(item.id)
                           : removeFromSaved(item.id)
                       }
-                      className="p-2 rounded-lg text-gray-400 hover:text-red-400 hover:bg-red-500/10 border border-[#2e2e2e] hover:border-red-500/30 transition-colors cursor-pointer"
+                      className="p-2 rounded-xl text-gray-400 hover:text-red-400 hover:bg-red-500/10 border border-[#282e3c] hover:border-red-500/30 transition-colors cursor-pointer"
                       title="Remove workout"
                       aria-label="Remove workout"
                     >

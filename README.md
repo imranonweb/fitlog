@@ -4,13 +4,6 @@ A dark, high-performance, no-nonsense gym companion and workout tracker built wi
 
 ---
 
-## 🚀 Live Demo & Links
-
-- **Live URL**: [https://fitlog-app.vercel.app](https://fitlog-app.vercel.app) *(Replace with your deployed Vercel link)*
-- **GitHub Repository**: [https://github.com/imranonweb/fitlog](https://github.com/imranonweb/fitlog) *(Replace with your repo link)*
-
----
-
 ## 🛠️ Technologies Used
 
 | Technology | Purpose |

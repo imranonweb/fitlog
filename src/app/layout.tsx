@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${oswald.variable} ${inter.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0d0d0d] text-gray-100 font-[family-name:var(--font-inter)] selection:bg-[#ccff00] selection:text-black">
+      <body className="min-h-full flex flex-col bg-[#0c0d10] text-gray-100 font-[family-name:var(--font-inter)] selection:bg-[#c2f800] selection:text-black">
         <PlanProvider>
           <Navbar />
           <main className="min-h-screen flex-1 flex flex-col">{children}</main>
@@ -46,16 +46,16 @@ export default function RootLayout({
             position="top-right"
             toastOptions={{
               style: {
-                background: "#141414",
+                background: "#15171d",
                 color: "#ffffff",
-                border: "1px solid #2a2a2a",
+                border: "1px solid #222630",
                 borderRadius: "8px",
                 fontSize: "14px",
               },
               success: {
                 iconTheme: {
-                  primary: "#ccff00",
-                  secondary: "#0a0a0a",
+                  primary: "#c2f800",
+                  secondary: "#0c0d10",
                 },
               },
               error: {

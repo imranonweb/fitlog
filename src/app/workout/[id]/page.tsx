@@ -47,15 +47,16 @@ export default function WorkoutDetailsPage({
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="h-6 w-32 bg-[#1f1f1f] rounded mb-8 animate-pulse" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-6 aspect-[4/3] rounded-2xl bg-[#181818] animate-pulse border border-[#222222]" />
-          <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="h-10 bg-[#1f1f1f] rounded w-3/4 animate-pulse" />
-            <div className="h-20 bg-[#181818] rounded animate-pulse" />
-            <div className="h-44 bg-[#141414] rounded-xl animate-pulse" />
-            <div className="h-12 bg-[#1f1f1f] rounded-full animate-pulse" />
+          <div className="lg:col-span-6 aspect-square rounded-2xl bg-[#171a21] animate-pulse border border-[#232834]" />
+          <div className="lg:col-span-6 flex flex-col gap-5">
+            <div className="h-10 bg-[#171a21] rounded w-3/4 animate-pulse" />
+            <div className="h-14 bg-[#151922] rounded-xl animate-pulse" />
+            <div className="h-8 bg-[#171a21] rounded-full w-1/3 animate-pulse" />
+            <div className="h-56 bg-[#13161f] rounded-2xl animate-pulse" />
+            <div className="h-28 bg-[#151922] rounded-xl animate-pulse" />
+            <div className="h-12 bg-[#171a21] rounded-xl animate-pulse" />
           </div>
         </div>
       </div>
@@ -65,7 +66,7 @@ export default function WorkoutDetailsPage({
   if (error || !workout) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-20 text-center">
-        <div className="inline-flex p-4 rounded-full bg-[#181818] border border-[#262626] text-red-400 mb-6">
+        <div className="inline-flex p-4 rounded-full bg-[#151922] border border-[#232834] text-red-400 mb-6">
           <svg
             className="w-10 h-10"
             fill="none"
@@ -80,7 +81,7 @@ export default function WorkoutDetailsPage({
             />
           </svg>
         </div>
-        <h2 className="text-3xl font-black text-white uppercase font-[family-name:var(--font-oswald)] mb-3">
+        <h2 className="text-3xl font-bold text-white uppercase font-[family-name:var(--font-oswald)] mb-3">
           Workout Not Found
         </h2>
         <p className="text-gray-400 mb-8 text-base">
@@ -88,7 +89,7 @@ export default function WorkoutDetailsPage({
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ccff00] text-black font-extrabold text-sm hover:bg-[#b8e600] transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] bg-[#c2f800] text-black font-bold text-xs uppercase tracking-wider hover:bg-[#b0e000] transition-colors"
         >
           Back to Workouts
         </Link>
@@ -97,33 +98,11 @@ export default function WorkoutDetailsPage({
   }
 
   return (
-    <div className="py-8 sm:py-12 bg-[#0d0d0d] min-h-[calc(100vh-80px)]">
+    <div className="py-8 sm:py-12 lg:py-16 bg-[#0f1115] min-h-[calc(100vh-80px)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 sm:mb-8">
-          <Link
-            href="/#library"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#ccff00] transition-colors font-medium"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            <span>Back to Library</span>
-          </Link>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-start">
-          <div className="lg:col-span-6 lg:sticky lg:top-28">
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#262626] bg-[#141414] shadow-2xl">
+          <div className="lg:col-span-6">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-[#232834] bg-[#171a21] shadow-2xl">
               <Image
                 src={workout.image}
                 alt={workout.name}
@@ -132,126 +111,123 @@ export default function WorkoutDetailsPage({
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/80 via-transparent to-transparent pointer-events-none" />
-
-              <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                {workout.muscleGroups.map((group) => (
-                  <span
-                    key={group}
-                    className="px-3 py-1 text-xs font-black uppercase tracking-wider rounded-md bg-black/85 text-[#ccff00] border border-[#ccff00]/40 backdrop-blur-md"
-                  >
-                    {group}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
           <div className="lg:col-span-6 flex flex-col">
-            <div className="border-b border-[#222222] pb-6 mb-6">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white font-[family-name:var(--font-oswald)] tracking-tight mb-3">
-                {workout.name}
-              </h1>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                {workout.description}
-              </p>
+            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold uppercase text-white font-[family-name:var(--font-oswald)] tracking-tight leading-none mb-3">
+              {workout.name}
+            </h1>
+
+            <p className="text-gray-400 text-sm sm:text-[15px] leading-relaxed mb-4">
+              {workout.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {workout.muscleGroups.map((group) => (
+                <span
+                  key={group}
+                  className="px-3.5 py-1 text-xs font-bold capitalize rounded-full bg-[#c2f800] text-black shadow-sm"
+                >
+                  {group}
+                </span>
+              ))}
             </div>
 
-            <div className="bg-[#141414] border border-[#222222] rounded-xl p-5 mb-8">
-              <h2 className="text-xs font-black tracking-widest text-[#ccff00] uppercase mb-4 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ccff00]" />
-                KEY SPECS
-              </h2>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-6 text-sm">
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+            <div className="bg-[#13161f] border border-[#222735] rounded-2xl p-5 sm:p-6 mb-8">
+              <div className="flex flex-col space-y-3.5 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
                     EQUIPMENT
                   </span>
-                  <span className="font-semibold text-white">
+                  <span className="font-medium text-gray-200 text-right">
                     {workout.equipment}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
                     DIFFICULTY
                   </span>
-                  <span className="font-semibold text-white">
+                  <span className="font-medium text-gray-200 text-right">
                     {workout.difficulty}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
-                    SETS & REPS
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
+                    SETS
                   </span>
-                  <span className="font-semibold text-white">
-                    {workout.sets} sets × {workout.reps}
+                  <span className="font-medium text-gray-200 text-right">
+                    {workout.sets}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
+                    REPS
+                  </span>
+                  <span className="font-medium text-gray-200 text-right">
+                    {workout.reps}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
                     DURATION
                   </span>
-                  <span className="font-semibold text-white">
+                  <span className="font-medium text-gray-200 text-right">
                     {workout.duration} min
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
                     CALORIES
                   </span>
-                  <span className="font-semibold text-white">
+                  <span className="font-medium text-gray-200 text-right">
                     {workout.caloriesBurned} kcal
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-gray-400 uppercase tracking-wider">
                     RATING
                   </span>
-                  <span className="font-semibold text-[#ccff00] flex items-center gap-1">
-                    ★ {workout.rating}
+                  <span className="font-medium text-gray-200 text-right">
+                    {workout.rating}
                   </span>
                 </div>
               </div>
             </div>
 
             <div className="mb-8">
-              <h2 className="text-sm font-black tracking-wider text-white uppercase font-[family-name:var(--font-oswald)] mb-4 flex items-center gap-2">
+              <h2 className="text-sm font-bold tracking-wider text-white uppercase font-[family-name:var(--font-oswald)] mb-3">
                 INSTRUCTIONS
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-2.5 text-xs sm:text-sm text-gray-300 leading-relaxed">
                 {workout.instructions.map((step, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#141414] border border-[#222222]"
-                  >
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#ccff00] text-black text-xs font-black flex items-center justify-center">
-                      {idx + 1}
+                  <p key={idx} className="flex items-start gap-1.5">
+                    <span className="text-gray-400 font-medium shrink-0">
+                      {idx + 1}.
                     </span>
-                    <p className="text-gray-300 text-sm leading-relaxed pt-0.5">
-                      {step}
-                    </p>
-                  </div>
+                    <span>{step}</span>
+                  </p>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4 border-t border-[#222222]">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <button
                 type="button"
                 onClick={() => addToPlan(workout)}
                 disabled={isAlreadyInPlan || isPlanFull}
-                className={`flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-extrabold tracking-wide uppercase transition-all duration-200 ${
+                className={`flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold tracking-wider transition-all duration-200 ${
                   isAlreadyInPlan
-                    ? "bg-[#1f1f1f] text-gray-400 border border-[#2a2a2a] cursor-not-allowed"
+                    ? "bg-[#1e2330] text-gray-400 border border-[#282f40] cursor-not-allowed"
                     : isPlanFull
-                    ? "bg-[#1f1f1f] text-gray-400 border border-[#2a2a2a] cursor-not-allowed"
-                    : "bg-[#ccff00] hover:bg-[#b8e600] text-black shadow-lg shadow-[#ccff00]/15 active:scale-95 cursor-pointer"
+                    ? "bg-[#1e2330] text-gray-400 border border-[#282f40] cursor-not-allowed"
+                    : "bg-[#c2f800] hover:bg-[#b0e000] text-black shadow-lg shadow-[#c2f800]/15 active:scale-95 cursor-pointer"
                 }`}
               >
                 <svg
@@ -263,8 +239,8 @@ export default function WorkoutDetailsPage({
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M12 4v16m8-8H4"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
                 <span>
@@ -280,14 +256,14 @@ export default function WorkoutDetailsPage({
                 type="button"
                 onClick={() => addToSaved(workout)}
                 disabled={isAlreadySaved}
-                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold tracking-wide uppercase border transition-all duration-200 ${
+                className={`inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-medium tracking-wider border transition-all duration-200 ${
                   isAlreadySaved
-                    ? "bg-[#161616] text-gray-500 border-[#242424] cursor-not-allowed"
-                    : "bg-[#161616] hover:bg-[#202020] text-white border-[#2e2e2e] hover:border-[#ccff00]/50 active:scale-95 cursor-pointer"
+                    ? "bg-[#151922] text-gray-500 border-[#232834] cursor-not-allowed"
+                    : "bg-transparent hover:bg-[#151922] text-gray-200 border-[#2e3444] active:scale-95 cursor-pointer"
                 }`}
               >
                 <svg
-                  className="w-4 h-4 text-[#ccff00]"
+                  className="w-4 h-4 text-gray-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
