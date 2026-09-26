@@ -1,10 +1,10 @@
-# 💪 FitLog — Train with Intent. Log Every Set.
+#  FitLog — Train with Intent. Log Every Set.
 
 A dark, high-performance, no-nonsense gym companion and workout tracker built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS**. Pick a lift from the library, lock it into today's plan, track live session metrics, and build consistent momentum.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 | Technology | Purpose |
 | :--- | :--- |
@@ -19,33 +19,33 @@ A dark, high-performance, no-nonsense gym companion and workout tracker built wi
 
 ---
 
-## ✨ 5+ Key Features
+##  Key Features
 
-### 1. 🏋️ Curated Exercise Library & Responsive Grid
+### 1.  Curated Exercise Library & Responsive Grid
 Explore 12 fundamental lifts covering chest, back, legs, arms, shoulders, and core. Each workout card showcases an athletic illustration, category badges, equipment specifications, and a key stats row (Duration, Calories Burned, Community Rating). Automatically adapts from a single column on mobile to a clean 3x4 grid on large displays.
 
-### 2. 🔍 Dynamic Workout Details & Form Instructions
+### 2.  Dynamic Workout Details & Form Instructions
 Each exercise features a dedicated dynamic page (`/workout/[id]`) with a split-column layout. The left column highlights the workout visual with floating category pills, while the right provides an in-depth breakdown: full description, a **Key Specs** grid (Equipment, Difficulty, Sets, Reps, Duration, Calories, Rating), and a numbered 4-step exercise execution guide.
 
-### 3. 🛡️ Smart Daily Plan Management (5-Lift Cap)
+### 3.  Smart Daily Plan Management (5-Lift Cap)
 Fitness is about focus. FitLog enforces a strict cap of 5 lifts per daily workout. The application automatically detects duplicates and plan limits, updating the CTA buttons in real-time (*"Already in Plan"*, *"Plan Full (Max 5)"*, or *"Saved"*) with instant user toast feedback.
 
-### 4. 📊 Live Training Metrics Dashboard
+### 4.  Live Training Metrics Dashboard
 The `/my-plan` dashboard computes and displays real-time cumulative stats across three primary metrics cards:
 - **Exercises**: Current lifts loaded vs. the 5-exercise cap.
 - **Minutes**: Total workout duration calculated dynamically.
 - **Calories**: Total estimated energy expenditure in kcal.
 
-### 5. 🗂️ Dual Tabs, Multi-Criteria Sorting & Completion Tracking
+### 5.  Dual Tabs, Multi-Criteria Sorting & Completion Tracking
 - **Tab Navigation**: Seamlessly switch between **Today's Plan** and **Saved** workouts with dynamic counter badges.
-- **Sorting (Challenge C1)**: Instant client-side re-sorting by **Duration**, **Calories**, or **Rating** without mutating original state.
-- **Mark as Done (Challenge C3)**: Mark lifts complete with an interactive check button, striking through the title and stamping a green completed badge.
-- **Quick Removal (Challenge C3)**: One-click removal for both planned and saved workouts with undo-ready toast alerts.
+- **Sorting**: Instant client-side re-sorting by **Duration**, **Calories**, or **Rating** without mutating original state.
+- **Mark as Done**: Mark lifts complete with an interactive check button, striking through the title and stamping a green completed badge.
+- **Quick Removal**: One-click removal for both planned and saved workouts with undo-ready toast alerts.
 
-### 6. 💾 LocalStorage Persistence with Hydration Safety
+### 6.  LocalStorage Persistence with Hydration Safety
 All planned and saved workouts persist across browser tabs, page reloads, and sessions. Implemented using an `isHydrated` lifecycle pattern that completely prevents Next.js SSR hydration mismatches.
 
-### 7. 🎨 Figma-Fidelity Dark Gym Aesthetic & Custom 404 Route
+### 7.  Figma-Fidelity Dark Gym Aesthetic & Custom 404 Route
 Designed following modern gym branding with deep `#0d0d0d` surfaces, `#ccff00` electric lime accents, glassmorphic sticky navigation with counter pills, and a rep-themed **404 Not Found** page routing users back to the gym floor.
 
 ---
@@ -112,8 +112,3 @@ npm run build
 npm run start
 ```
 
----
-
-## 📝 License & Attribution
-Created for **Programming Hero Batch 14 — Assignment 6 (FitLog)**.
-Designed with intent. Train hard, log honest.
