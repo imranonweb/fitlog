@@ -27,7 +27,6 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   const [saved, setSaved] = useState<Workout[]>([]);
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Load state from localStorage on client mount
   useEffect(() => {
     try {
       const storedPlan = localStorage.getItem("fitlog-plan");
@@ -40,35 +39,32 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
         setSaved(JSON.parse(storedSaved));
       }
     } catch (error) {
-      console.error("Failed to load fitlog data from localStorage:", error);
+      console.error(error);
     } finally {
       setIsHydrated(true);
     }
   }, []);
 
-  // Save plan to localStorage whenever it changes (after hydration)
   useEffect(() => {
     if (isHydrated) {
       try {
         localStorage.setItem("fitlog-plan", JSON.stringify(plan));
       } catch (error) {
-        console.error("Failed to persist plan to localStorage:", error);
+        console.error(error);
       }
     }
   }, [plan, isHydrated]);
 
-  // Save saved list to localStorage whenever it changes (after hydration)
   useEffect(() => {
     if (isHydrated) {
       try {
         localStorage.setItem("fitlog-saved", JSON.stringify(saved));
       } catch (error) {
-        console.error("Failed to persist saved items to localStorage:", error);
+        console.error(error);
       }
     }
   }, [saved, isHydrated]);
 
-  // Add to today's plan with duplicate check and max cap of 5
   const addToPlan = (workout: Workout) => {
     if (plan.length >= 5) {
       toast.error("Today's plan is full! (Max 5 lifts)");
@@ -84,7 +80,6 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
     toast.success(`${workout.name} added to today's plan! 💪`);
   };
 
-  // Add to saved list with duplicate check
   const addToSaved = (workout: Workout) => {
     if (saved.some((item) => item.id === workout.id)) {
       toast.error("Already saved for later!");
@@ -95,19 +90,16 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
     toast.success(`${workout.name} saved for later! 🔖`);
   };
 
-  // Remove from today's plan
   const removeFromPlan = (id: number) => {
     setPlan((prev) => prev.filter((item) => item.id !== id));
     toast.success("Removed from plan");
   };
 
-  // Remove from saved list
   const removeFromSaved = (id: number) => {
     setSaved((prev) => prev.filter((item) => item.id !== id));
     toast.success("Removed from saved list");
   };
 
-  // Mark an item as done
   const markAsDone = (id: number) => {
     setPlan((prev) =>
       prev.map((item) =>
@@ -117,7 +109,6 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
     toast.success("Workout completed! Great work! 🎉");
   };
 
-  // Computed metrics live from current plan
   const metrics = {
     exercises: plan.length,
     minutes: plan.reduce((acc, curr) => acc + (curr.duration || 0), 0),
