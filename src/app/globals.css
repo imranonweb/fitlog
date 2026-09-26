@@ -1,3 +1,37 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --color-accent: #ccff00;
+  --color-accent-hover: #bbf000;
+  --color-card: #151515;
+  --color-card-border: #242424;
+  --font-display: var(--font-oswald);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
