@@ -20,9 +20,22 @@ export default function Hero() {
 
             <a
               href="#library"
-              className="inline-flex items-center justify-center bg-[#c2f800] hover:bg-[#b0e000] text-black font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-[6px] transition-all duration-200 active:scale-95 shadow-sm"
+              className="inline-flex items-center justify-center gap-2 bg-[#c2f800] hover:bg-[#b0e000] text-black font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-[6px] transition-all duration-200 active:scale-95 shadow-sm"
             >
-              BROWSE WORKOUTS
+              <span>BROWSE WORKOUTS</span>
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
             </a>
           </div>
 
